@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line react/function-component-definition
-  const NewTodo = ({ onNewTodo }) => {
+
+import './styles.css';
+
+const NewTodo = ({ onNewTodo }) => {
   const ESCAPE_KEY = 27;
   const ENTER_KEY = 13;
 
@@ -12,12 +14,13 @@ import PropTypes from 'prop-types';
   };
 
   const submit = () => {
-    if(onNewTodo) {
+    if (onNewTodo) {
       onNewTodo(value);
-      erase();}
+      erase();
+    }
   };
 
-  const onChange =  (event) => {
+  const onChange = (event) => {
     setValue(event.target.value);
   };
 
@@ -25,23 +28,23 @@ import PropTypes from 'prop-types';
     if (event.which === ENTER_KEY) {
       submit();
     } else if (event.which === ESCAPE_KEY) {
-      erase ();
+      erase();
     }
   };
 
   return (
     <input
       className="new-todo"
-      placeholder='o que precisa ser feito?'
+      placeholder="o que precisa ser feito?"
       value={value}
       onChange={onChange}
       onKeyDown={onKeyDown}
     />
-)};
-
+  );
+};
 
 NewTodo.propTypes = {
-  onNewTodo: PropTypes.func.isRequired
+  onNewTodo: PropTypes.func.isRequired,
 };
 
 export default NewTodo;
