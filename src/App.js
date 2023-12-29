@@ -41,7 +41,10 @@ function App() {
 
   // eslint-disable-next-line no-unused-vars
   const onToggle = (todo) => {
-
+    setTodos(
+      todos.map((obj) =>
+        (obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj))
+    );
   }
   return(
     <section id='app' className='container'>
@@ -61,7 +64,7 @@ function App() {
           todos.map((todo) => (
             <li key={todo.id.toString}>
               <span
-                className='todo'
+                className={['todo', todo.checked ? "checked" : ""].join(' ')}
                 onClick={ () => onToggle(todo)}
                 onKeyPress={ () => onToggle(todo)}
                 role='button'
