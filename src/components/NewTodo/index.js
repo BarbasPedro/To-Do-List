@@ -40,7 +40,8 @@ import PropTypes from 'prop-types';
 )};
 
 
-NewTodo.PropTypes = {
-  onNewTodo: PropTypes.func.isRequired,;
-}
+NewTodo.propTypes = {
+  onNewTodo: PropTypes.func.isRequired
+};
+
 export default NewTodo;
