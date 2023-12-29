@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+
 import NewTodo from './components/NewTodo';
 
 import './App.css';

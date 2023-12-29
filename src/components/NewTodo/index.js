@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import PropTypes from 'prop-types';
 // eslint-disable-next-line react/function-component-definition
   const NewTodo = ({ onNewTodo }) => {
   const ESCAPE_KEY = 27;
@@ -39,4 +39,8 @@ import React, { useState } from 'react'
     />
 )};
 
+
+NewTodo.PropTypes = {
+  onNewTodo: PropTypes.func.isRequired,;
+}
 export default NewTodo;
