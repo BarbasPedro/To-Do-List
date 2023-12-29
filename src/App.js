@@ -39,13 +39,17 @@ function App() {
     }
   };
 
-  // eslint-disable-next-line no-unused-vars
   const onToggle = (todo) => {
     setTodos(
       todos.map((obj) =>
         (obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj))
     );
   }
+
+  const onRemove = (todo) => {
+    setTodos(todos.filter((obj) => obj.id !== todo.id))
+  }
+
   return(
     <section id='app' className='container'>
       <header>
@@ -70,7 +74,11 @@ function App() {
                 role='button'
                 tabIndex={0}
                 >{todo.title}</span>
-              <button className='remove' type="button">
+              <button
+                className='remove'
+                type="button"
+                onClick={() => onRemove(todo)}
+              >
                 <MdDelete size={27} />
               </button>
             </li>
